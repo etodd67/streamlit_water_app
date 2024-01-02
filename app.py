@@ -184,7 +184,7 @@ data.dropna(subset=['Sample_Date_Sample_Time'], inplace=True)
 
 yearly_data = data.groupby(pd.Grouper(key='Sample_Date_Sample_Time', freq='Y'))[selected_variable].median().reset_index()
 yearly_median_values = data.groupby(pd.Grouper(key='Sample_Date_Sample_Time', freq='Y'))[selected_variable].median().reset_index()
-smooth_yearly_median_values = yearly_median_values.interpolate(method='spline')
+smooth_yearly_median_values = yearly_median_values.interpolate(method='spline', order=3)
 
 fig = go.Figure()
 
