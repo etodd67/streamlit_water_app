@@ -1,5 +1,7 @@
 import pandas as pd
 import pydeck as pdk
+from pydeck import _json_tools
+_pdk_json_tools = _json_tools
 import plotly.express as px
 import streamlit as st
 import plotly.graph_objects as go
